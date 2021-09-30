@@ -4,10 +4,8 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofkau.implemetacionretoddd.genericvalues.Direccion;
 import co.com.sofkau.implemetacionretoddd.genericvalues.Nombre;
 import co.com.sofkau.implemetacionretoddd.producto.entities.Producto;
-import co.com.sofkau.implemetacionretoddd.venta.events.ClienteAgregado;
-import co.com.sofkau.implemetacionretoddd.venta.events.FacturaAgregada;
-import co.com.sofkau.implemetacionretoddd.venta.events.SucursalAgregada;
-import co.com.sofkau.implemetacionretoddd.venta.events.VentaCreada;
+import co.com.sofkau.implemetacionretoddd.producto.values.ProductoId;
+import co.com.sofkau.implemetacionretoddd.venta.events.*;
 import co.com.sofkau.implemetacionretoddd.venta.values.*;
 
 import java.util.Objects;
@@ -58,6 +56,16 @@ public final class Venta extends AggregateEvent<VentaId> {
         appendChange(new SucursalAgregada(sucursalId, nombre, direccion));
 
     }
+    public void asociarProducto(ProductoId productoId){
+        appendChange(new ProductoAsociado(productoId)).apply();
+    }
+
+    public void cambiarPrecioFactura(FacturaId facturaId, Precio precio){
+        appendChange(new PrecioFacturaCambiada(facturaId,precio));
+    }
+
+
+
 
     //getters
     public Descuento descuento() {

@@ -2,13 +2,11 @@ package co.com.sofkau.implemetacionretoddd.venta.entities;
 
 import co.com.sofka.domain.generic.EventChange;
 import co.com.sofkau.implemetacionretoddd.producto.entities.Producto;
-import co.com.sofkau.implemetacionretoddd.venta.events.ClienteAgregado;
-import co.com.sofkau.implemetacionretoddd.venta.events.FacturaAgregada;
-import co.com.sofkau.implemetacionretoddd.venta.events.SucursalAgregada;
-import co.com.sofkau.implemetacionretoddd.venta.events.VentaCreada;
+import co.com.sofkau.implemetacionretoddd.venta.events.*;
+import co.com.sofkau.implemetacionretoddd.venta.values.Descuento;
 
 import java.util.HashSet;
-import java.util.Set;
+
 
 public final class VentaChange extends EventChange {
     public VentaChange(Venta venta) {
@@ -26,5 +24,9 @@ public final class VentaChange extends EventChange {
         apply((SucursalAgregada event)->{
             venta.sucursal = new Sucursal(event.getSucursalId(),event.getNombre(),event.getDireccion());
         });
+        apply((ProductoAsociado event)->{ //duda
+            venta.productos.add(new Producto(event.getProductoId()));
+        });
+
     }
 }

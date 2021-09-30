@@ -1,25 +1,25 @@
-package co.com.sofkau.implemetacionretoddd.venta.entities;
+package co.com.sofkau.implemetacionretoddd.venta.commands;
 
-import co.com.sofka.domain.generic.Entity;
+import co.com.sofka.domain.generic.Command;
+import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.venta.values.FacturaId;
 import co.com.sofkau.implemetacionretoddd.venta.values.FechaFactura;
 import co.com.sofkau.implemetacionretoddd.venta.values.Precio;
 
-import java.util.Objects;
+public final class AgregarFactura implements Command {
 
-public final class Factura extends Entity<FacturaId> {
-
+    protected FacturaId facturaId;
     protected FechaFactura fechaFactura;
     protected Precio precio;
 
-    public Factura(FacturaId facturaId, FechaFactura fechaFactura, Precio precio) {
-        super(facturaId);
+    public AgregarFactura(FacturaId facturaId, FechaFactura fechaFactura, Precio precio) {
+        this.facturaId = facturaId;
         this.fechaFactura = fechaFactura;
         this.precio = precio;
     }
 
-    public void modificarPrecio(Precio precio){
-        this.precio = Objects.requireNonNull(precio);
+    public FacturaId getFacturaId() {
+        return facturaId;
     }
 
     public FechaFactura getFechaFactura() {
