@@ -1,25 +1,29 @@
-package co.com.sofkau.implemetacionretoddd.venta.entities;
+package co.com.sofkau.implemetacionretoddd.venta.events;
 
-import co.com.sofka.domain.generic.Entity;
+import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.genericvalues.Direccion;
 import co.com.sofkau.implemetacionretoddd.genericvalues.Nombre;
 import co.com.sofkau.implemetacionretoddd.venta.values.ClienteId;
 import co.com.sofkau.implemetacionretoddd.venta.values.CorreoElectronico;
 import co.com.sofkau.implemetacionretoddd.venta.values.Telefono;
 
-public final class Cliente extends Entity<ClienteId> {
-
+public final class ClienteAgregado extends DomainEvent {
+    protected ClienteId clienteId;
     protected Nombre nombre;
     protected CorreoElectronico correoElectronico;
     protected Direccion direccion;
     protected Telefono telefono;
 
-    public Cliente(ClienteId clienteId, Nombre nombre, CorreoElectronico correoElectronico, Direccion direccion, Telefono telefono) {
-        super(clienteId);
+    public ClienteAgregado(ClienteId clienteId, Nombre nombre, CorreoElectronico correoElectronico, Direccion direccion, Telefono telefono) {
+        super("almacenropa.venta.clienteagregado");
         this.nombre = nombre;
         this.correoElectronico = correoElectronico;
         this.direccion = direccion;
         this.telefono = telefono;
+    }
+
+    public ClienteId getClienteId() {
+        return clienteId;
     }
 
     public Nombre getNombre() {
