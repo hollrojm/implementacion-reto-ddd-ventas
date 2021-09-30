@@ -4,6 +4,7 @@ import co.com.sofka.domain.generic.EventChange;
 import co.com.sofkau.implemetacionretoddd.producto.entities.Producto;
 import co.com.sofkau.implemetacionretoddd.venta.events.ClienteAgregado;
 import co.com.sofkau.implemetacionretoddd.venta.events.FacturaAgregada;
+import co.com.sofkau.implemetacionretoddd.venta.events.SucursalAgregada;
 import co.com.sofkau.implemetacionretoddd.venta.events.VentaCreada;
 
 import java.util.HashSet;
@@ -21,6 +22,9 @@ public final class VentaChange extends EventChange {
         });
         apply((FacturaAgregada event)->{
             venta.factura = new Factura(event.getFacturaId(),event.getFechaFactura(),event.getPrecio());
+        });
+        apply((SucursalAgregada event)->{
+            venta.sucursal = new Sucursal(event.getSucursalId(),event.getNombre(),event.getDireccion());
         });
     }
 }

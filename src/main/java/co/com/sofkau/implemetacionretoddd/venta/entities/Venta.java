@@ -6,6 +6,7 @@ import co.com.sofkau.implemetacionretoddd.genericvalues.Nombre;
 import co.com.sofkau.implemetacionretoddd.producto.entities.Producto;
 import co.com.sofkau.implemetacionretoddd.venta.events.ClienteAgregado;
 import co.com.sofkau.implemetacionretoddd.venta.events.FacturaAgregada;
+import co.com.sofkau.implemetacionretoddd.venta.events.SucursalAgregada;
 import co.com.sofkau.implemetacionretoddd.venta.events.VentaCreada;
 import co.com.sofkau.implemetacionretoddd.venta.values.*;
 
@@ -48,6 +49,14 @@ public final class Venta extends AggregateEvent<VentaId> {
         Objects.requireNonNull(fechaFactura);
         Objects.requireNonNull(precio);
         appendChange(new FacturaAgregada(facturaId,fechaFactura,precio));
+    }
+
+    public void agregarSucursal(SucursalId sucursalId, Nombre nombre, Direccion direccion){
+        Objects.requireNonNull(sucursalId);
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(direccion);
+        appendChange(new SucursalAgregada(sucursalId, nombre, direccion));
+
     }
 
     //getters
