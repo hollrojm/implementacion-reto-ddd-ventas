@@ -2,9 +2,10 @@ package co.com.sofkau.implemetacionretoddd.producto.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-public final class DetalleMarca implements ValueObject<String> {
+public final class ValorBonoDescuento implements ValueObject<Float> {
+
     @Override
-    public String value() {
+    public Float value() {
         return null;
     }
 }
