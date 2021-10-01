@@ -16,7 +16,7 @@ public final class ValorUnitario implements ValueObject<Float> {
 
     @Override
     public Float value() {
-        return null;
+        return value;
     }
 
     @Override

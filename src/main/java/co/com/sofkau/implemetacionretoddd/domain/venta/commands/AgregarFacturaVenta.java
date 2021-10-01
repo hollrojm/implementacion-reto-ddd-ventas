@@ -5,13 +5,13 @@ import co.com.sofkau.implemetacionretoddd.domain.venta.values.FacturaId;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.FechaFactura;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.Precio;
 
-public final class AgregarFactura implements Command {
+public final class AgregarFacturaVenta implements Command {
 
     protected FacturaId facturaId;
     protected FechaFactura fechaFactura;
     protected Precio precio;
 
-    public AgregarFactura(FacturaId facturaId, FechaFactura fechaFactura, Precio precio) {
+    public AgregarFacturaVenta(FacturaId facturaId, FechaFactura fechaFactura, Precio precio) {
         this.facturaId = facturaId;
         this.fechaFactura = fechaFactura;
         this.precio = precio;

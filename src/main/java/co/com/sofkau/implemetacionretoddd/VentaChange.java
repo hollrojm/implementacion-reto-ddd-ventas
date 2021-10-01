@@ -1,7 +1,7 @@
 package co.com.sofkau.implemetacionretoddd;
 
 import co.com.sofka.domain.generic.EventChange;
-import co.com.sofkau.implemetacionretoddd.domain.producto.entities.Producto;
+import co.com.sofkau.implemetacionretoddd.builder.ProductoBuilder;
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.Cliente;
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.Factura;
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.Sucursal;
@@ -11,7 +11,9 @@ import java.util.HashSet;
 
 
 public final class VentaChange extends EventChange {
+
     public VentaChange(Venta venta) {
+
         apply((VentaCreada event)->{
             venta.cantidad = event.getCantidad();
             venta.descuento = event.getDescuento();
@@ -31,8 +33,7 @@ public final class VentaChange extends EventChange {
         });
 
         apply((ProductoAsociado event)->{ //duda
-            venta.productos.add(new Producto(event.getProductoId(),event.getNombreProducto(),event.getBonoDescuento(),
-                    event.getEmpaque(),event.getValorProducto(),event.getMarca(),event.getColor(),event.getTalla()));
+            venta.productos.add(new ProductoBuilder().setProductoId(event.getProductoId()).setNombreProducto(event.getNombreProducto()).setBonoDescuento(event.getBonoDescuento()).setEmpaque(event.getEmpaque()).setValorProducto(event.getValorProducto()).setMarca(event.getMarca()).setColor(event.getColor()).setTalla(event.getTalla()).createProducto());
         });
 
         apply((PrecioFacturaCambiada event)->{

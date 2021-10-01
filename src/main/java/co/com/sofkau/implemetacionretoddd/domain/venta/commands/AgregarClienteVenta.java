@@ -7,14 +7,14 @@ import co.com.sofkau.implemetacionretoddd.domain.venta.values.ClienteId;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.CorreoElectronico;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.Telefono;
 
-public final class AgregarCliente implements Command {
+public final class AgregarClienteVenta implements Command {
     protected ClienteId clienteId;
     protected Nombre nombre;
     protected CorreoElectronico correoElectronico;
     protected Direccion direccion;
     protected Telefono telefono;
 
-    public AgregarCliente(ClienteId clienteId, Nombre nombre, CorreoElectronico correoElectronico, Direccion direccion, Telefono telefono) {
+    public AgregarClienteVenta(ClienteId clienteId, Nombre nombre, CorreoElectronico correoElectronico, Direccion direccion, Telefono telefono) {
         this.nombre = nombre;
         this.correoElectronico = correoElectronico;
         this.direccion = direccion;

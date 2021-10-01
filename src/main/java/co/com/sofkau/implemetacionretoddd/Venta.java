@@ -5,7 +5,6 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.domain.producto.entities.BonoDescuento;
 import co.com.sofkau.implemetacionretoddd.domain.producto.entities.Empaque;
-import co.com.sofkau.implemetacionretoddd.domain.producto.entities.Producto;
 import co.com.sofkau.implemetacionretoddd.domain.producto.entities.ValorProducto;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.*;
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.Cliente;

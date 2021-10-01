@@ -4,12 +4,12 @@ import co.com.sofka.domain.generic.Command;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.Descuento;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.FacturaId;
 
-public final class ModificarDescuento implements Command {
+public final class ModificarDescuentoEnVenta implements Command {
 
     private final FacturaId facturaId;
     private final Descuento descuento;
 
-    public ModificarDescuento(FacturaId facturaId, Descuento descuento) {
+    public ModificarDescuentoEnVenta(FacturaId facturaId, Descuento descuento) {
         this.facturaId = facturaId;
         this.descuento = descuento;
     }

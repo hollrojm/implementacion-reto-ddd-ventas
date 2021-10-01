@@ -5,12 +5,12 @@ import co.com.sofkau.implemetacionretoddd.domain.venta.entities.genericvalues.Di
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.genericvalues.Nombre;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.SucursalId;
 
-public final class AgregarSucursal implements Command {
+public final class AgregarSucursalVenta implements Command {
     protected SucursalId sucursalId;
     protected Nombre nombre;
     protected Direccion direccion;
 
-    public AgregarSucursal(SucursalId sucursalId, Nombre nombre, Direccion direccion) {
+    public AgregarSucursalVenta(SucursalId sucursalId, Nombre nombre, Direccion direccion) {
         this.sucursalId = sucursalId;
         this.nombre = nombre;
         this.direccion = direccion;
