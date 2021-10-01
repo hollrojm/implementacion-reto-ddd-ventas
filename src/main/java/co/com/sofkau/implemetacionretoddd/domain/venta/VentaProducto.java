@@ -1,8 +1,8 @@
-package co.com.sofkau.implemetacionretoddd;
+package co.com.sofkau.implemetacionretoddd.domain.venta;
 
 import co.com.sofka.domain.generic.AggregateEvent;
-
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofkau.implemetacionretoddd.domain.producto.Producto;
 import co.com.sofkau.implemetacionretoddd.domain.producto.entities.BonoDescuento;
 import co.com.sofkau.implemetacionretoddd.domain.producto.entities.Empaque;
 import co.com.sofkau.implemetacionretoddd.domain.producto.entities.ValorProducto;
@@ -10,16 +10,16 @@ import co.com.sofkau.implemetacionretoddd.domain.producto.values.*;
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.Cliente;
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.Factura;
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.Sucursal;
-import co.com.sofkau.implemetacionretoddd.domain.venta.events.*;
-import co.com.sofkau.implemetacionretoddd.domain.venta.values.*;
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.genericvalues.Direccion;
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.genericvalues.Nombre;
+import co.com.sofkau.implemetacionretoddd.domain.venta.events.*;
+import co.com.sofkau.implemetacionretoddd.domain.venta.values.*;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-public final class Venta extends AggregateEvent<VentaId> {
+public class VentaProducto extends AggregateEvent<VentaId> {
 
     protected Descuento descuento;
     protected Cantidad cantidad;
@@ -29,21 +29,19 @@ public final class Venta extends AggregateEvent<VentaId> {
     protected Cliente cliente;
 
 
-    public Venta(VentaId ventaId, Descuento descuento, Cantidad cantidad) {
+    public VentaProducto(VentaId ventaId, Descuento descuento, Cantidad cantidad) {
         super(ventaId);
-        this.descuento = descuento;
-        this.cantidad = cantidad;
-        appendChange(new VentaCreada(descuento,cantidad)).apply();
+        appendChange(new VentaCreada(ventaId,descuento,cantidad)).apply();
     }
 
-    private Venta(VentaId ventaId){
+    private VentaProducto(VentaId ventaId){
         super(ventaId);
         subscribe(new VentaChange(this));
     }
-    public static Venta from(VentaId ventaId, List<DomainEvent> events){
-        var venta = new Venta(ventaId);
-        events.forEach(venta::applyEvent);
-        return venta;
+    public static VentaProducto from(VentaId ventaId, List<DomainEvent> events){
+        var ventapro = new VentaProducto(ventaId);
+        events.forEach(ventapro::applyEvent);
+        return ventapro;
     }
 
 

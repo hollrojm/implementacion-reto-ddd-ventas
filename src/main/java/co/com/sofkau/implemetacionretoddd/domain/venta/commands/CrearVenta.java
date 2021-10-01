@@ -5,7 +5,7 @@ import co.com.sofkau.implemetacionretoddd.domain.venta.values.Cantidad;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.Descuento;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.VentaId;
 
-public final class CrearVenta implements Command {
+public final class CrearVenta extends Command {
 
 
     protected VentaId ventaId;

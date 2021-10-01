@@ -10,8 +10,8 @@ public final class BonoDescuento extends Entity<BonoDescuentoId> {
 
     ValorBonoDescuento valorBonoDescuento;
 
-    public BonoDescuento(BonoDescuentoId entityId, ValorBonoDescuento valorBonoDescuento) {
-        super(entityId);
+    public BonoDescuento(BonoDescuentoId bonoDescuentoId, ValorBonoDescuento valorBonoDescuento) {
+        super(bonoDescuentoId);
         this.valorBonoDescuento = valorBonoDescuento;
     }
 

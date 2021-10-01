@@ -1,4 +1,4 @@
-package co.com.sofkau.implemetacionretoddd;
+package co.com.sofkau.implemetacionretoddd.domain.producto;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
@@ -21,15 +21,20 @@ public final class Producto extends AggregateEvent<ProductoId> {
     protected Color color;
     protected Talla talla;
 
-    public Producto(ProductoId productoId, NombreProducto nombreProducto, BonoDescuento bonoDescuento, Empaque empaque, ValorProducto valorProducto, Marca marca, Color color, Talla talla) {
+    public Producto(ProductoId productoId, NombreProducto nombreProducto, BonoDescuentoId bonoDescuentoId, ValorBonoDescuento valorBonoDescuento, EmpaqueId empaqueId, TipoEmpaque tipoEmpaque, ValorProductoId valorProductoId, ValorUnitario valorUnitario, Marca marca, Color color, Talla talla) {
         super(productoId);
-        this.nombreProducto = nombreProducto;
-        this.bonoDescuento = bonoDescuento;
-        this.empaque = empaque;
-        this.valorProducto = valorProducto;
-        this.marca = marca;
-        this.color = color;
-        this.talla = talla;
+        Objects.requireNonNull(productoId);
+        Objects.requireNonNull(nombreProducto);
+        Objects.requireNonNull(bonoDescuentoId);
+        Objects.requireNonNull(valorBonoDescuento);
+        Objects.requireNonNull(empaqueId);
+        Objects.requireNonNull(tipoEmpaque);
+        Objects.requireNonNull(valorProductoId);
+        Objects.requireNonNull(valorUnitario);
+        Objects.requireNonNull(marca);
+        Objects.requireNonNull(color);
+        Objects.requireNonNull(talla);
+        appendChange(new ProductoAgregado(productoId, nombreProducto,  bonoDescuentoId,valorBonoDescuento, empaqueId, tipoEmpaque, valorProductoId, valorUnitario,  marca,  color,  talla)).apply();
     }
 
 
@@ -44,17 +49,7 @@ public final class Producto extends AggregateEvent<ProductoId> {
         return producto;
     }
 
-    public void agregarProducto(ProductoId productoId, NombreProducto nombreProducto, BonoDescuento bonoDescuento, Empaque empaque, ValorProducto valorProducto, Marca marca, Color color, Talla talla){
-        Objects.requireNonNull(productoId);
-        Objects.requireNonNull(nombreProducto);
-        Objects.requireNonNull(bonoDescuento);
-        Objects.requireNonNull(empaque);
-        Objects.requireNonNull(valorProducto);
-        Objects.requireNonNull(marca);
-        Objects.requireNonNull(color);
-        Objects.requireNonNull(talla);
-        appendChange(new ProductoAgregado(productoId, nombreProducto,  bonoDescuento, empaque,  valorProducto,  marca,  color,  talla)).apply();
-    }
+
 
     public void modificarNombreProducto(ProductoId productoId, NombreProducto nombreProducto){
         Objects.requireNonNull(productoId);

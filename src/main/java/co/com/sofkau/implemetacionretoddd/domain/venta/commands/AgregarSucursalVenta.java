@@ -5,7 +5,7 @@ import co.com.sofkau.implemetacionretoddd.domain.venta.entities.genericvalues.Di
 import co.com.sofkau.implemetacionretoddd.domain.venta.entities.genericvalues.Nombre;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.SucursalId;
 
-public final class AgregarSucursalVenta implements Command {
+public final class AgregarSucursalVenta extends Command {
     protected SucursalId sucursalId;
     protected Nombre nombre;
     protected Direccion direccion;

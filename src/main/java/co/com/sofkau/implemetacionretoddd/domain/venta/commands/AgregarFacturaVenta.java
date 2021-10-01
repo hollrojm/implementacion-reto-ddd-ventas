@@ -5,7 +5,7 @@ import co.com.sofkau.implemetacionretoddd.domain.venta.values.FacturaId;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.FechaFactura;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.Precio;
 
-public final class AgregarFacturaVenta implements Command {
+public final class AgregarFacturaVenta extends Command {
 
     protected FacturaId facturaId;
     protected FechaFactura fechaFactura;

@@ -10,20 +10,26 @@ public final class ProductoAgregado extends DomainEvent {
 
     private ProductoId productoId;
     protected NombreProducto nombreProducto;
-    protected BonoDescuento bonoDescuento;
-    protected Empaque empaque;
-    protected ValorProducto valorProducto;
+    protected BonoDescuentoId bonoDescuentoId;
+    protected ValorBonoDescuento valorBonoDescuento;
+    protected EmpaqueId empaqueId;
+    protected TipoEmpaque tipoEmpaque;
+    protected ValorProductoId valorProductoId;
+    protected ValorUnitario valorUnitario;
     protected Marca marca;
     protected Color color;
     protected Talla talla;
 
-    public ProductoAgregado(ProductoId productoId, NombreProducto nombreProducto, BonoDescuento bonoDescuento, Empaque empaque, ValorProducto valorProducto, Marca marca, Color color, Talla talla) {
-        super("almacenropa.producto.productoagregado");
+    public ProductoAgregado(ProductoId productoId, NombreProducto nombreProducto, BonoDescuentoId bonoDescuentoId, ValorBonoDescuento valorBonoDescuento, EmpaqueId empaqueId, TipoEmpaque tipoEmpaque, ValorProductoId valorProductoId, ValorUnitario valorUnitario, Marca marca, Color color, Talla talla) {
+        super("almacenropa.producto.productoAgregado");
         this.productoId = productoId;
         this.nombreProducto = nombreProducto;
-        this.bonoDescuento = bonoDescuento;
-        this.empaque = empaque;
-        this.valorProducto = valorProducto;
+        this.bonoDescuentoId = bonoDescuentoId;
+        this.valorBonoDescuento = valorBonoDescuento;
+        this.empaqueId = empaqueId;
+        this.tipoEmpaque = tipoEmpaque;
+        this.valorProductoId = valorProductoId;
+        this.valorUnitario = valorUnitario;
         this.marca = marca;
         this.color = color;
         this.talla = talla;
@@ -37,16 +43,28 @@ public final class ProductoAgregado extends DomainEvent {
         return nombreProducto;
     }
 
-    public BonoDescuento getBonoDescuento() {
-        return bonoDescuento;
+    public BonoDescuentoId getBonoDescuentoId() {
+        return bonoDescuentoId;
     }
 
-    public Empaque getEmpaque() {
-        return empaque;
+    public ValorBonoDescuento getValorBonoDescuento() {
+        return valorBonoDescuento;
     }
 
-    public ValorProducto getValorProducto() {
-        return valorProducto;
+    public EmpaqueId getEmpaqueId() {
+        return empaqueId;
+    }
+
+    public TipoEmpaque getTipoEmpaque() {
+        return tipoEmpaque;
+    }
+
+    public ValorProductoId getValorProductoId() {
+        return valorProductoId;
+    }
+
+    public ValorUnitario getValorUnitario() {
+        return valorUnitario;
     }
 
     public Marca getMarca() {

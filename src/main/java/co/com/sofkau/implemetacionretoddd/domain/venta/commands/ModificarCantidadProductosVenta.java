@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.Command;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.Cantidad;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.FacturaId;
 
-public final class ModificarCantidadProductosVenta implements Command {
+public final class ModificarCantidadProductosVenta extends Command {
 
     private final FacturaId facturaId;
     private final Cantidad cantidad;

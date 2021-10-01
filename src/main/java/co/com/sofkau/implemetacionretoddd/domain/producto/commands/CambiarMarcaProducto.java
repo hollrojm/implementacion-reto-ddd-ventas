@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.Marca;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.ProductoId;
 
-public final class CambiarMarcaProducto implements Command {
+public final class CambiarMarcaProducto extends Command {
 
     protected ProductoId productoId;
     protected Marca marca;

@@ -1,11 +1,10 @@
 package co.com.sofkau.implemetacionretoddd.domain.producto.commands;
 
 import co.com.sofka.domain.generic.Command;
-import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.Color;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.ProductoId;
 
-public final class CambiarColorProducto implements Command {
+public class CambiarColorProducto extends Command {
 
     protected ProductoId productoId;
     protected Color color;

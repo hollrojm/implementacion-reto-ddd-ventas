@@ -7,7 +7,7 @@ import co.com.sofkau.implemetacionretoddd.domain.venta.values.ClienteId;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.CorreoElectronico;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.Telefono;
 
-public final class AgregarClienteVenta implements Command {
+public final class AgregarClienteVenta extends Command {
     protected ClienteId clienteId;
     protected Nombre nombre;
     protected CorreoElectronico correoElectronico;

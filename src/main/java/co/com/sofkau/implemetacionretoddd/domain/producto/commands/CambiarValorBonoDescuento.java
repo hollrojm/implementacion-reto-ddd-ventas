@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.BonoDescuentoId;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.ValorBonoDescuento;
 
-public final class CambiarValorBonoDescuento implements Command {
+public final class CambiarValorBonoDescuento extends Command {
 
     private BonoDescuentoId bonoDescuentoId;
     private ValorBonoDescuento valorBonoDescuento;

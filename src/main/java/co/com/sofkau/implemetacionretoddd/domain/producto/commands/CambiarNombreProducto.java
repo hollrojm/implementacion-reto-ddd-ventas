@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.NombreProducto;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.ProductoId;
 
-public final class CambiarNombreProducto implements Command {
+public final class CambiarNombreProducto extends Command {
     protected ProductoId productoId;
     protected NombreProducto nombreProducto;
 

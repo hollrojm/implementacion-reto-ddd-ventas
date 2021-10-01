@@ -8,11 +8,11 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.sofkau</groupId>
-	<artifactId>implementacion</artifactId>
+	<groupId>com.tumotoya</groupId>
+	<artifactId>Concesionarios</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>implementacion</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Concesionarios</name>
+	<description>Concesionarios</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -30,24 +30,13 @@
 		<dependency>
 			<groupId>co.com.sofka</groupId>
 			<artifactId>domain</artifactId>
-			<version>1.0.0</version>
+			<version>1.5.0</version>
 		</dependency>
 		<dependency>
 			<groupId>co.com.sofka</groupId>
 			<artifactId>business</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>co.com.sofka</groupId>
-			<artifactId>infrastructure</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>co.com.sofka</groupId>
-			<artifactId>application</artifactId>
 			<version>1.5.0</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>

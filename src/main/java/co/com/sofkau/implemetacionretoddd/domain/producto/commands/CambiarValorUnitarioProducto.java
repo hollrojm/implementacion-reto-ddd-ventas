@@ -5,7 +5,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.ValorProductoId;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.ValorUnitario;
 
-public final class CambiarValorUnitarioProducto implements Command {
+public final class CambiarValorUnitarioProducto extends Command {
     private ValorProductoId valorProductoId;
     private ValorUnitario valorUnitario;
 

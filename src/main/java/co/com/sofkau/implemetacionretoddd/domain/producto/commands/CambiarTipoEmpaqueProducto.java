@@ -1,11 +1,10 @@
 package co.com.sofkau.implemetacionretoddd.domain.producto.commands;
 
 import co.com.sofka.domain.generic.Command;
-import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.EmpaqueId;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.TipoEmpaque;
 
-public final class CambiarTipoEmpaqueProducto implements Command {
+public final class CambiarTipoEmpaqueProducto extends Command {
 
     private EmpaqueId empaqueId;
     private TipoEmpaque tipoEmpaque;
