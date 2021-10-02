@@ -1,4 +1,4 @@
-package co.com.sofkau.implemetacionretoddd.usecasetest;
+package co.com.sofkau.implemetacionretoddd.domain.producto.usecases;
 
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;

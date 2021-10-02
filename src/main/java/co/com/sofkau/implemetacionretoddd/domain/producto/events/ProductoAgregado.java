@@ -9,16 +9,16 @@ import co.com.sofkau.implemetacionretoddd.domain.producto.values.*;
 public final class ProductoAgregado extends DomainEvent {
 
     private ProductoId productoId;
-    protected NombreProducto nombreProducto;
-    protected BonoDescuentoId bonoDescuentoId;
-    protected ValorBonoDescuento valorBonoDescuento;
-    protected EmpaqueId empaqueId;
-    protected TipoEmpaque tipoEmpaque;
-    protected ValorProductoId valorProductoId;
-    protected ValorUnitario valorUnitario;
-    protected Marca marca;
-    protected Color color;
-    protected Talla talla;
+    private NombreProducto nombreProducto;
+    private BonoDescuentoId bonoDescuentoId;
+    private ValorBonoDescuento valorBonoDescuento;
+    private EmpaqueId empaqueId;
+    private TipoEmpaque tipoEmpaque;
+    private ValorProductoId valorProductoId;
+    private ValorUnitario valorUnitario;
+    private Marca marca;
+    private Color color;
+    private Talla talla;
 
     public ProductoAgregado(ProductoId productoId, NombreProducto nombreProducto, BonoDescuentoId bonoDescuentoId, ValorBonoDescuento valorBonoDescuento, EmpaqueId empaqueId, TipoEmpaque tipoEmpaque, ValorProductoId valorProductoId, ValorUnitario valorUnitario, Marca marca, Color color, Talla talla) {
         super("almacenropa.producto.productoAgregado");

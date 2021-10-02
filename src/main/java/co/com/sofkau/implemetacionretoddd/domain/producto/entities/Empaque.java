@@ -16,7 +16,7 @@ public final class Empaque extends Entity<EmpaqueId> {
         this.tipoEmpaque = tipoEmpaque;
     }
 
-    public void modificarTipoEmpaque(TipoEmpaque tipoEmpaque ){
+    public void actualizarTipoEmpaque(TipoEmpaque tipoEmpaque ){
         this.tipoEmpaque = Objects.requireNonNull(tipoEmpaque);
     }
 

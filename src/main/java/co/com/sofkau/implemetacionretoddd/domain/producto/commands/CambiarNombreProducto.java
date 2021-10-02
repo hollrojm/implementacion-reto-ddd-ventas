@@ -6,11 +6,12 @@ import co.com.sofkau.implemetacionretoddd.domain.producto.values.NombreProducto;
 import co.com.sofkau.implemetacionretoddd.domain.producto.values.ProductoId;
 
 public final class CambiarNombreProducto extends Command {
+
     protected ProductoId productoId;
     protected NombreProducto nombreProducto;
 
     public CambiarNombreProducto(ProductoId productoId, NombreProducto nombreProducto) {
-        this.productoId = this.productoId;
+        this.productoId = productoId;
         this.nombreProducto = nombreProducto;
     }
 

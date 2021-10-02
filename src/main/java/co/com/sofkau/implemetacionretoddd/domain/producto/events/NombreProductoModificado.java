@@ -10,7 +10,7 @@ public final class NombreProductoModificado extends DomainEvent {
 
     public NombreProductoModificado(ProductoId productoId, NombreProducto nombreProducto) {
         super("almacenropa.producto.nombreproductoactualizado");
-        this.productoId = this.productoId;
+        this.productoId = productoId;
         this.nombreProducto = nombreProducto;
     }
 

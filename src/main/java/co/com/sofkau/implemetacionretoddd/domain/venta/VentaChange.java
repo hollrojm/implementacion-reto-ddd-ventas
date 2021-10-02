@@ -24,7 +24,7 @@ public  class VentaChange extends EventChange {
 
         apply((SucursalAgregada event)-> ventaProducto.sucursal = new Sucursal(event.getSucursalId(),event.getNombre(),event.getDireccion()));
 
-        //apply((ProductoAsociado event)-> ventaProducto.productos.add(new ProductoBuilder().setProductoId(event.getProductoId()).setNombreProducto(event.getNombreProducto()).setBonoDescuento(event.getBonoDescuento()).setEmpaque(event.getEmpaque()).setValorProducto(event.getValorProducto()).setMarca(event.getMarca()).setColor(event.getColor()).setTalla(event.getTalla()).createProducto()));
+        //apply((ProductoAsociado event)-> ventaProducto.productos.add(event.getProductoId()).setNombreProducto(event.getNombreProducto()).setBonoDescuento(event.getBonoDescuento()).setEmpaque(event.getEmpaque()).setValorProducto(event.getValorProducto()).setMarca(event.getMarca()).setColor(event.getColor()).setTalla(event.getTalla()).createProducto()));
 
         apply((PrecioFacturaCambiada event)-> ventaProducto.factura.modificarPrecio(event.getPrecio()));
 

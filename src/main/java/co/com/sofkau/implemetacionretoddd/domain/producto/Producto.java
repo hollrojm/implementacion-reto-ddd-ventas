@@ -13,6 +13,7 @@ import java.util.Objects;
 
 public final class Producto extends AggregateEvent<ProductoId> {
 
+
     protected NombreProducto nombreProducto;
     protected BonoDescuento bonoDescuento;
     protected Empaque empaque;
@@ -37,8 +38,6 @@ public final class Producto extends AggregateEvent<ProductoId> {
         appendChange(new ProductoAgregado(productoId, nombreProducto,  bonoDescuentoId,valorBonoDescuento, empaqueId, tipoEmpaque, valorProductoId, valorUnitario,  marca,  color,  talla)).apply();
     }
 
-
-
     private Producto(ProductoId productoId){
         super(productoId);
         subscribe(new ProductoChange(this));
@@ -48,8 +47,6 @@ public final class Producto extends AggregateEvent<ProductoId> {
         events.forEach(producto::applyEvent);
         return producto;
     }
-
-
 
     public void modificarNombreProducto(ProductoId productoId, NombreProducto nombreProducto){
         Objects.requireNonNull(productoId);
@@ -67,6 +64,9 @@ public final class Producto extends AggregateEvent<ProductoId> {
         appendChange(new ColorModificado(productoId,color)).apply();
     }
 
+    public void modificarTipoEmpaque(EmpaqueId empaqueId, TipoEmpaque tipoEmpaque ){
+        appendChange(new TipoEmpaqueModificado(empaqueId,tipoEmpaque)).apply();
+    }
 
 
     public NombreProducto nombreProducto() {

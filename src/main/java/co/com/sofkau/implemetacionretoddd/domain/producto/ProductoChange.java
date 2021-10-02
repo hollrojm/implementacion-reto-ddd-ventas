@@ -20,9 +20,9 @@ public final class ProductoChange extends EventChange {
             producto.talla = event.getTalla();
         });
 
-        apply((NombreProductoModificado event)-> producto.modificarNombreProducto(event.getProductoId(),event.getNombreProducto()));
+        apply((NombreProductoModificado event)-> producto.nombreProducto =event.getNombreProducto());
 
-        apply((TipoEmpaqueModificado event)-> producto.empaque.modificarTipoEmpaque(event.getTipoEmpaque()));
+        apply((TipoEmpaqueModificado event)-> producto.empaque.actualizarTipoEmpaque(event.getTipoEmpaque()));
 
         apply((MarcaModificada event)-> producto.marca =event.getMarca());
 

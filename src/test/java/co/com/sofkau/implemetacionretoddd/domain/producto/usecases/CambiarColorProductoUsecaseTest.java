@@ -1,4 +1,4 @@
-package co.com.sofkau.implemetacionretoddd.usecasetest;
+package co.com.sofkau.implemetacionretoddd.domain.producto.usecases;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
@@ -37,6 +37,7 @@ public final class CambiarColorProductoUsecaseTest {
 
          when(repository.getEventsBy("666-666")).thenReturn(events());
          cambiarColorProductoUseCase.addRepository(repository);
+
         //act
          var response = UseCaseHandler.getInstance()
                  .setIdentifyExecutor("666-666")

@@ -1,4 +1,4 @@
-package co.com.sofkau.implemetacionretoddd.usecasetest;
+package co.com.sofkau.implemetacionretoddd.domain.producto.usecases;
 
 
 import co.com.sofka.business.generic.UseCaseHandler;
@@ -6,7 +6,6 @@ import co.com.sofka.business.repository.DomainEventRepository;
 import co.com.sofka.business.support.RequestCommand;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.implemetacionretoddd.domain.producto.commands.CambiarMarcaProducto;
-import co.com.sofkau.implemetacionretoddd.domain.producto.events.ColorModificado;
 import co.com.sofkau.implemetacionretoddd.domain.producto.events.MarcaModificada;
 import co.com.sofkau.implemetacionretoddd.domain.producto.events.ProductoAgregado;
 import co.com.sofkau.implemetacionretoddd.domain.producto.usecases.CambiarMarcaProductoUseCase;
