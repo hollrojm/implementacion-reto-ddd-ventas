@@ -65,7 +65,16 @@ public final class Producto extends AggregateEvent<ProductoId> {
     }
 
     public void modificarTipoEmpaque(EmpaqueId empaqueId, TipoEmpaque tipoEmpaque ){
+        Objects.requireNonNull(empaqueId);
+        Objects.requireNonNull(tipoEmpaque);
         appendChange(new TipoEmpaqueModificado(empaqueId,tipoEmpaque)).apply();
+    }
+
+    public void modificarValorBonoDescuento(BonoDescuentoId bonoDescuentoId,ValorBonoDescuento valorBonoDescuento){
+        Objects.requireNonNull(bonoDescuentoId);
+        Objects.requireNonNull(valorBonoDescuento);
+        appendChange(new ValorBonoDescuentoModificado(bonoDescuentoId,valorBonoDescuento)).apply();
+
     }
 
 

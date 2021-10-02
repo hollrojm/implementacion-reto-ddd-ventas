@@ -15,7 +15,7 @@ public final class BonoDescuento extends Entity<BonoDescuentoId> {
         this.valorBonoDescuento = valorBonoDescuento;
     }
 
-    public void modificarValorBonoDescuento(ValorBonoDescuento valorBonoDescuento){
+    public void actualizarValorBonoDescuento(ValorBonoDescuento valorBonoDescuento){
         this.valorBonoDescuento = Objects.requireNonNull(valorBonoDescuento);
     }
 

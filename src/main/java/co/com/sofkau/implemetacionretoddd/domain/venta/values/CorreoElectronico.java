@@ -13,9 +13,9 @@ public final class CorreoElectronico implements ValueObject<String> {
         if(this.value.isBlank() ){
             throw new IllegalArgumentException("El descuento de la factura no puede ser vació");
         }
-        if (!this.value.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)(\\.[A-Za-z]{2,})$")) {
-            throw new IllegalArgumentException("Email no valido");
-        }
+        //if (!this.value.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)(\\.[A-Za-z]{2,})$")) {
+            //throw new IllegalArgumentException("Email no valido");
+        //}
     }
 
     @Override

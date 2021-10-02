@@ -6,19 +6,28 @@ import co.com.sofkau.implemetacionretoddd.domain.venta.entities.genericvalues.No
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.ClienteId;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.CorreoElectronico;
 import co.com.sofkau.implemetacionretoddd.domain.venta.values.Telefono;
+import co.com.sofkau.implemetacionretoddd.domain.venta.values.VentaId;
 
 public final class AgregarClienteVenta extends Command {
-    protected ClienteId clienteId;
-    protected Nombre nombre;
-    protected CorreoElectronico correoElectronico;
-    protected Direccion direccion;
-    protected Telefono telefono;
 
-    public AgregarClienteVenta(ClienteId clienteId, Nombre nombre, CorreoElectronico correoElectronico, Direccion direccion, Telefono telefono) {
+    private VentaId ventaId;
+    private ClienteId clienteId;
+    private Nombre nombre;
+    private CorreoElectronico correoElectronico;
+    private Direccion direccion;
+    private Telefono telefono;
+
+    public AgregarClienteVenta(VentaId ventaId, ClienteId clienteId, Nombre nombre, CorreoElectronico correoElectronico, Direccion direccion, Telefono telefono) {
+        this.ventaId = ventaId;
+        this.clienteId = clienteId;
         this.nombre = nombre;
         this.correoElectronico = correoElectronico;
         this.direccion = direccion;
         this.telefono = telefono;
+    }
+
+    public VentaId getVentaId() {
+        return ventaId;
     }
 
     public ClienteId getClienteId() {

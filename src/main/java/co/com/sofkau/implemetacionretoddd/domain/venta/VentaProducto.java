@@ -44,7 +44,6 @@ public class VentaProducto extends AggregateEvent<VentaId> {
         return ventapro;
     }
 
-
     public void agregarCliente(ClienteId clienteId, Nombre nombre, CorreoElectronico correoElectronico, Direccion direccion, Telefono telefono){
         Objects.requireNonNull(clienteId);
         Objects.requireNonNull(nombre);
@@ -90,6 +89,13 @@ public class VentaProducto extends AggregateEvent<VentaId> {
 
     public void modificarDescuento(FacturaId facturaId, Descuento descuento){
         appendChange(new DescuentoModificado(facturaId,descuento));
+    }
+
+    public void asignarDescuentoPorCompraSuperiorA(Float descuento){
+        appendChange(new DescuentoPorCompraSuperiorA(descuento)).apply();
+    }
+    public void enviarMensajeCompra(String mensaje){
+        appendChange(new EnviarMensaje(mensaje)).apply();
     }
 
     //getters

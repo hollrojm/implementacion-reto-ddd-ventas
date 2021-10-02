@@ -16,6 +16,7 @@ public final class ClienteAgregado extends DomainEvent {
 
     public ClienteAgregado(ClienteId clienteId, Nombre nombre, CorreoElectronico correoElectronico, Direccion direccion, Telefono telefono) {
         super("almacenropa.venta.clienteagregado");
+        this.clienteId = clienteId;
         this.nombre = nombre;
         this.correoElectronico = correoElectronico;
         this.direccion = direccion;

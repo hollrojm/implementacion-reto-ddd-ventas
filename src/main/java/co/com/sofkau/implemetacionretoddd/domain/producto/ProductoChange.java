@@ -28,7 +28,7 @@ public final class ProductoChange extends EventChange {
 
         apply((ColorModificado event)-> producto.color = event.getColor());
 
-        apply((ValorBonoDescuentoModificado event)-> producto.bonoDescuento.modificarValorBonoDescuento(event.getValorBonoDescuento()));
+        apply((ValorBonoDescuentoModificado event)-> producto.bonoDescuento.actualizarValorBonoDescuento(event.getValorBonoDescuento()));
 
         apply((ValorUnitarioModificado event)-> producto.valorProducto.modificarValorUnitario(event.getValorUnitario()));
 

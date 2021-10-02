@@ -10,12 +10,11 @@ import co.com.sofkau.implemetacionretoddd.domain.venta.values.VentaId;
 public final class AgregarClienteVentaUseCase extends UseCase<RequestCommand<AgregarClienteVenta>, ResponseEvents> {
 
     @Override
-    public void executeUseCase(RequestCommand<AgregarClienteVenta>agregarClienteVentaRequestCommand){
-
+    public void executeUseCase(RequestCommand<AgregarClienteVenta> agregarClienteVentaRequestCommand) {
         var command = agregarClienteVentaRequestCommand.getCommand();
-
-
-
+        var ventaProducto = VentaProducto.from(command.getVentaId(), retrieveEvents(command.getClienteId().value()));
+        ventaProducto.agregarCliente(command.getClienteId(), command.getNombre(), command.getCorreoElectronico(), command.getDireccion(), command.getTelefono());
     }
+
 
 }

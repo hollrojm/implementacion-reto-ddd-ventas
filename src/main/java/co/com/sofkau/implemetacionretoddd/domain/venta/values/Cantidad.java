@@ -4,19 +4,19 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public final class Cantidad implements ValueObject<Integer> {
+public final class Cantidad implements ValueObject<String> {
 
-    private final Integer value;
+    private final String value;
 
-    public Cantidad(Integer value) {
+    public Cantidad(String value) {
         this.value = Objects.requireNonNull(value);
-        if(this.value == null || this.value == 0 ){
+        if(this.value.isBlank() ){
             throw new IllegalArgumentException("La cantidad no puede estar en cero o vacía");
         }
     }
 
     @Override
-    public Integer value() {
+    public String value() {
         return value;
     }
 
